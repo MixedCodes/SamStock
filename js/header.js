@@ -8,7 +8,7 @@ headerTemplate.innerHTML = `
 	<link rel="stylesheet" href="css/main.css"/>
 	<style>
 		nav {
-			padding: 0 16px;
+			padding: 0 1rem;
 		}
 
 		nav ul, .container {
@@ -23,7 +23,7 @@ headerTemplate.innerHTML = `
 
 		nav a {
 			color: #000000;
-			padding: 0 16px;
+			padding: 0 1rem;
 			text-decoration: none;
 		}
 
@@ -32,7 +32,6 @@ headerTemplate.innerHTML = `
 		}
 
 		#upper-nav ul {
-			height: 30px;
 			justify-content: flex-end;
 		}
 
@@ -42,7 +41,7 @@ headerTemplate.innerHTML = `
 			justify-content: space-between;
 			align-items: center;
 			background-color: #FFFFFF;
-			box-shadow:0px 5px 5px 0 rgba(0,0,0,.16);
+			box-shadow:0 5px 5px 0 rgba(0,0,0,.16);
 		}
 
 		header nav ul {
@@ -50,23 +49,39 @@ headerTemplate.innerHTML = `
 		}
 
 		#logo {
-			padding: 13px 0;
+			padding: 1rem 0;
+		}
+
+		form {
+			position: relative;
+			width: 100%;
+			background-color: #F4F4F4;
+			border: none;
+		    border-radius: 1rem;
+		}
+
+		nav button {
+			position: absolute;
+			top: .5rem;
+			right: 1rem;
+			border: 0;
+			cursor: pointer;
 		}
 
 		nav input[type="search"] {
 			width: 100%;
-			height: 30px;
+			height: 2rem;
 			background-color: #F4F4F4;
+			padding: 0 1rem;
 			border: none;
-		    border-radius: 15px;
-		    padding: 0 10px;
+			border-radius: 1rem;
 		}
 	</style>
 
 	<nav id="upper-nav">
 		<ul>
-			<li><a href="admin.html">Admin Management</a></li>
-			<li><a href="team.html">Team Page</a></li>
+			<li><a href="admin.html"><small>Admin Management</small></a></li>
+			<li><a href="team.html"><small>Team Page</small></a></li>
 		</ul>
 	</nav>
 	<header>
@@ -79,9 +94,12 @@ headerTemplate.innerHTML = `
 				<li><a href="sandals.html">Sandals</a></li>
 			</ul>
 			<div class="container">
-				<input type="search" placeholder="Search..."/>
-				<a href="login.html"><img src="assets/login-icon.png" alt="Login Icon" class="icon" width="45" height="45"/></a>
-			</div>
+				<form>
+					<input type="search" placeholder="Search..."/>
+					<button type="submit"><img src="assets/search-icon.png" alt="Search Icon" class="icon" width="16" height="16"/></button>
+				</form>
+				<a href="login.html"><img src="assets/login-icon.png" alt="Login Icon" class="icon" width="50" height="50"/></a>
+			</div> 
 		</nav>
 	</header>`
 
