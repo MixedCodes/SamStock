@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Advanced Search</title>
+		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="css/search.css"/>
+		<link rel="stylesheet" href="css/product.css"/>
+		<style>
+			div.topper {
+			margin: 0 auto;
+			margin-top: 40px;
+			width: 90%;
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			align-content: space-around;
+			}
+			select#dropdown {
+				width: 150px;
+				height: 40px;
+				border-radius: 5px;
+				text-align: start;
+			}
+		</style>
+		<script async src="js/header.js"></script>
+		<script defer src="js/search.js" type="module"></script>
+	</head>
+	<body>
+		<header-component></header-component>
+		<h1>Advanced Search</h1>
+		<form id="search-form" action="http://localhost:3000/search" method="GET">
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name" autocomplete="off"/>
+
+			<label for="brand">Brand</label>
+			<select id="brand" name="brand">
+				<option value="">All</option>
+			</select>
+
+			<label for="category">Category</label>
+			<select id="category" name="category">
+				<option value="">All</option>
+			</select>
+
+			<label for="gender">Gender</label>
+			<select id="gender" name="gender">
+				<option value="">All</option>
+				<option value="M">Men</option>
+				<option value="W">Women</option>
+				<option value="U">Unisex</option>
+			</select>
+
+			<label id="size-label">Size</label>
+			<input type="hidden" id="size" name="size"/>
+			<div id="size-container"></div>
+
+			<div class="sorting">
+				<label id="dd" for="dropdown">Sort By: </label>
+				<select name="sort" id="dropdown">
+				<option value="Newest">Newest</option>
+				<option value="Ascending price">Ascending price</option>
+				<option value="Descending price">Descending price</option>
+			  	</select>
+			</div>
+			<div id="button-container">
+				<button type="submit" id="search">Search</button>
+				<button type="reset" id="clear">Clear</button>
+			</div>	
+		</form>
+
+		<div class="topper">
+			<div class="title">
+				<h5>SEARCH RESULT FOR:</h5>
+				<h5 id="selector"></h5>
+				<h5 id="result-count"></h5>
+			</div>
+		</div>
+	
+		<div id="card-container"></div>
+	</body>
+</html> 

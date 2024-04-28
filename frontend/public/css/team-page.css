@@ -1,0 +1,22 @@
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+ h1 {
+    text-align: center;
+    padding: 25px 0;
+}
+
+.container {
+    margin: 0 calc((100vw - (300px * 3))/2);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+} 
+
+.profile {
+    padding: 0 40px 25px 40px;
+}

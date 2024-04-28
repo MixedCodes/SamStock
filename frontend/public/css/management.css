@@ -1,0 +1,256 @@
+h1 {
+    margin: 2rem 0;
+}
+
+.container {
+    width: 80%;
+    margin: 1rem auto;
+    background-color: #EFEFEF;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+#search-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+  
+input[type="search"], #add-button {
+    border: none;
+    padding: .5rem 1rem;
+    border-radius: 1rem;
+}
+
+input[type="search"] {
+    padding-left: 2.5rem;
+    background: #FFFFFF url("../images/search-icon.svg") no-repeat 1rem center / 1rem;
+}
+  
+#add-button {
+    color: #000000;
+    cursor: pointer;
+    padding-right: 2.5rem;
+    background: #FFE270 url("../images/add-icon.svg") no-repeat right 1rem center / 1rem;
+}
+  
+#add-button:hover {
+    opacity: 0.65;
+}
+
+table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px RGBA(0,0,0,0.1);
+}
+
+table, th, td {
+    border: 1px solid #DDDDDD;
+}
+
+th, td {
+    text-align: left;
+    padding: .5rem;
+}
+
+#id-header, .id-row {
+    text-align: center;
+}
+
+th {
+    font-weight: var(--semi-bold);
+    background-color: #FFE270;
+    color: #000000;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #F2F2F2;
+}
+
+tbody tr:hover {
+    background-color: #FDDCA3;
+}
+
+.button-cell {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.overlay.open {
+    opacity: 1;
+    pointer-events: auto; 
+}
+
+.modal {
+    width: 60%;
+    margin-top: 100px;
+    border-radius: 3px;
+    background-color: #FFFFFF;
+}
+
+.modal-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .25rem 1rem;
+    border-bottom: 1px solid #000000;
+}
+
+.modal h2 {
+    font-weight: var(--semi-bold);
+    margin: .5rem 0;
+}
+
+.modal > form {
+    margin: 1rem;
+}
+
+.form-label {
+    text-align: center;
+}
+
+.product-information {
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr;
+    grid-template-rows: repeat(3, 1fr) 1fr;
+    gap: .5rem;
+
+    & .input-a {
+        grid-column: 1 / span 1;
+    }
+    & .input-b {
+        grid-column: 2 / span 1;
+    }
+    & .input-c {
+        grid-column: 1 / span 1;
+    }
+    & .input-d {
+        grid-column: 2 / span 1;
+    }
+    & .input-e {
+        grid-column: 1 / span 2;
+    }
+    & .input-f {
+        grid-column: 1 / span 2;
+    }
+    & .input-g {
+        grid-column: 3 / span 1;
+        grid-row: 1 / span 3;
+    }
+    & .input-h {
+        height: 200px;
+        grid-column: 3 / span 1;
+        grid-row: 2 / span 3;
+        overflow: scroll;
+        & p {
+            font-weight: var(--semi-bold);
+        }
+    }
+}
+
+.account-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+
+    & .input-c {
+        grid-column: 1 / span 2;
+    }
+    & .input-d {
+        grid-column: 1 / span 2;
+    }
+}
+
+.login-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem;
+
+    & .input-e {
+        grid-column: 1 / span 2;
+    }
+}
+
+.input-container {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+label {
+    font-weight: var(--semi-bold);
+}
+
+input[type="text"], input[type="email"], select, .input-container > input[type="number"] {
+    height: 2rem;
+    padding: 0 1rem;
+}
+
+#add-id, #edit-id {
+    height: 2rem;
+    padding: 0 0 0 1rem;
+    width: 3rem;
+}
+
+#desc {
+    height: 100%;
+}
+
+select {
+    box-sizing:content-box;
+    vertical-align: text-top;
+}
+
+#button-container {
+    width: 40%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem auto 0 auto;
+}
+
+form button {
+    font-weight: var(--semi-bold);
+    height: 2.5rem;
+    padding: 0 2rem;
+    border: 0;
+    background-color: #F4F4F4;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.65;
+    }
+}
+
+#submit {
+    flex: 3;
+    background-color: #FFE270;
+}
+
+#delete {
+    background-color: #EC5A5A;
+}

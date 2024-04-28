@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Team Page</title>
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/team-page.css">
+        <style>
+            html {
+                height: 100%;
+            }
+            body {
+                margin: 0px;
+                height: 100%;
+            }
+            #map {
+                height: 400px;
+                margin: 20px 10px 10px 20px;
+                border: 1px solid #888;
+            }
+        </style>
+        <script async src="js/header.js"></script> 
+    </head>
+    <body onload="createMapSample();">
+        <header-component></header-component>
+        <h1>Meet Our Team (Our store location is below!)</h1>
+        <div class="container">
+            <div class="profile">
+                <img src="images/best-pic.png" width="210" height="250">
+                <p><b>Natchanon Sinsub</b></p>
+                <p>6588202</p>
+                <p><b>Professional Front-End</b></p>
+            </div>
+            <div class="profile">
+                <img src="images/sam-pic.png" width="210" height="250">
+                <p><b>Wongpan Wongmethakul</b></p>
+                <p>6588208</p>
+                <p><b>Professional Front-End</b></p>
+            </div>
+            <div class="profile">
+                <img src="images/mix-pic.png" width="210" height="250">
+                <p><b>Patiparn Tangmongkolpaisan</b></p>
+                <p>6588103</p>
+                <p><b>Professional Back-End</b></p>
+            </div>
+            <div class="profile">
+                <img src="images/sian-pic.png" width="210" height="250">
+                <p><b>Anecha Prasobvittaya</b></p>
+                <p>6588153</p>
+                <p><b>Professional Back-End</b></p>
+            </div>
+            <div class="profile">
+                <img src="images/palm-pic.png" width="210" height="250">
+                <p><b>Veerapat Sangputngeontana</b></p>
+                <p>6588091</p>
+                <p><b>Professional Front-End</b></p>
+            </div>
+        </div><br>
+
+        <h1>Our Store Location</h1>
+        <div id="map"></div>
+        <!-- JavaScript to create and initialize the map -->
+        <script>
+            function createMapSample() {
+              // Coordinates for the store location
+              const lonCoors = 100.31150928071031;
+              const latCoors = 13.797005591464785;
+              // Dynamically create script element to load Longdo Map API
+              const longdoScript = document.createElement("script");
+              longdoScript.type = "text/javascript";
+              longdoScript.src =
+                "https://api.longdo.com/map/?key=12b4735bc982bf505065e8a04a3acd0f";
+              document.head.appendChild(longdoScript);
+              // Function to initialize the map
+              function initMap() {
+                var map = new longdo.Map({
+                  placeholder: document.getElementById("map"),
+                });
+                // Set base layer, location, and zoom level
+                map.Layers.setBase(longdo.Layers.GRAY);
+                map.location({ lon: lonCoors, lat: latCoors }, true);
+                map.zoom(16, true);
+                // Add marker and popup for store location
+                var marker = new longdo.Marker({ lon: lonCoors, lat: latCoors }, {
+                  title: 'SamStock Sneaker Store'
+                });
+        
+                var popup = new longdo.Popup({ lon: lonCoors, lat: latCoors }, {
+                  title: 'SamStock Sneaker Store',
+                  detail: 'Our first local sneaker store, SamStock, emerged from a shared passion for footwear among a group of friends. <br> <br> ซอย บ้านตั้งสิน Salaya, Phutthamonthon District, Nakhon Pathom 73170'
+                });
+      
+                map.Overlays.add(marker);
+                map.Overlays.add(popup);
+              }
+      
+              const mapDiv = document.getElementById("map");
+              initMap();
+            }
+      
+            createMapSample();
+          </script>
+    </body>
+</html>

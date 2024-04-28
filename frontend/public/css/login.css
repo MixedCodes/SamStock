@@ -1,0 +1,48 @@
+.box {
+  padding-bottom: 2rem;
+  width: 80%;
+  margin: auto;
+  margin-top: 10rem;
+  /* border: 1px solid black;
+    top: 50%;
+    left: 50%; */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+body {
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.inputbox {
+  position: relative;
+  margin: 30px;
+  text-align: center;
+}
+
+.inputbox input {
+  height: 3rem;
+  width: 25%;
+  padding: 0 1rem;
+  border-radius: 5px;
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  height: 3rem;
+  width: 26%;
+  background: #ffe270;
+  border: none;
+  border-radius: 5px;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Account Management</title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/management.css"/>
+    <script async src="js/management-header.js"></script>
+    <script defer src="js/account-management.js" type="module"></script>
+    <script defer src="js/modal.js" type="module"></script>
+</head>
+<body>
+    <header-component></header-component>
+    <h1>Account Management</h1>
+    <div class="container">
+        <div id="search-container">
+            <button data-target="#overlay" id="add-button">Add Account</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th id="id-header">ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="overlay" id="add-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Add Account</h2>
+                <button data-close-button class="close-button"><img src="images/close-icon.svg" alt="close" width="12" height="12"/></button>
+            </div>
+            
+            <form action="" method="POST" id="add-form">
+                <div class="input-container">
+                    <label for="add-id">ID (Auto Increment)</label>
+                    <input type="number" id="add-id" name="id" autocomplete="off"/>
+                </div><br>
+
+                <h4 class="form-label">Account Information</h4>
+                <div class="account-information">
+                    <div class="input-container input-a">
+                        <label for="add-fname">First Name</label>
+                        <input type="text" id="add-fname" name="fname" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-b">
+                        <label for="add-lname">Last Name</label>
+                        <input type="text" id="add-lname" name="lname" autocomplete="off" requied/>
+                    </div>
+
+                    <div class="input-container input-c">
+                        <label for="add-email">Email</label>
+                        <input type="email" id="add-email" name="email" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-d">
+                        <label for="add-address">Address</label>
+                        <input type="text" id="add-address" name="address" autocomplete="off" required/>
+                    </div>
+                </div><br><br>
+
+                <h4 class="form-label">Login Information</h4>
+                <div class="login-information">
+                    <div class="input-container name">
+                        <label for="add-username">Username</label>
+                        <input type="text" id="add-username" name="username" autocomplete="off"/>
+                    </div>
+
+                    <div class="input-container input-b">
+                        <label for="add-password">Password</label>
+                        <input type="text" id="add-password" name="password" autocomplete="off" required/>
+                    </div>
+                </div>
+
+                <div id="button-container">
+                    <button type="submit" id="submit">Add Account</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay" id="edit-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Edit Account</h2>
+                <button data-close-button class="close-button"><img src="images/close-icon.svg" alt="close" width="12" height="12"/></button>
+            </div>
+            
+            <form action="" method="PUT" id="edit-form">
+                 <div class="input-container">
+                    <label for="edit-id">ID</label>
+                    <input type="number" id="edit-id" name="id" autocomplete="off" disabled/>
+                </div><br>
+
+                <h4 class="form-label">Account Information</h4>
+                <div class="account-information">
+                    <div class="input-container input-a">
+                        <label for="edit-fname">First Name</label>
+                        <input type="text" id="edit-fname" name="fname" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-b">
+                        <label for="edit-lname">Last Name</label>
+                        <input type="text" id="edit-lname" name="lname" autocomplete="off" requied/>
+                    </div>
+
+                    <div class="input-container input-c">
+                        <label for="edit-email">Email</label>
+                        <input type="email" id="edit-email" name="email" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-d">
+                        <label for="edit-address">Address</label>
+                        <input type="text" id="edit-address" name="address" autocomplete="off" required/>
+                    </div>
+                </div><br><br>
+
+                <h4 class="form-label">Login Information</h4>
+                <div class="login-information">
+                    <div class="input-container name">
+                        <label for="edit-username">Username</label>
+                        <input type="text" id="edit-username" name="username" autocomplete="off"/>
+                    </div>
+
+                    <div class="input-container input-b">
+                        <label for="edit-password">Password</label>
+                        <input type="text" id="edit-password" name="password" autocomplete="off" required/>
+                    </div>
+                </div>
+
+                <div id="button-container">
+                    <button type="submit" id="submit">Save</button>
+                    <button type="button" id="delete">Delete</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

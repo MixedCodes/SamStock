@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lange="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<title>Home Page</title>
+		<link rel="stylesheet" href="css/main.css"/>
+		<link rel="stylesheet" href="css/index.css"/>
+		<link rel="stylesheet" href="css/product.css"/>
+		<script async src="js/header.js"></script>
+		<script defer src="js/category.js" type="module"></script>
+	</head>
+	<body>
+		<header-component data-current-url="<%= currentUrl %>"></header-component>
+		<div id="banner">
+			<button id="left"><img src="images/left-icon.svg" alt="Left Arrow" width="32" height="32"/></button>
+			<button id="right"><img src="images/right-icon.svg" alt="Right Arrow" width="32" height="32"/></button>
+            
+			<div id="dots-wrapper">
+			  <div id="dots-list"></div> 
+			</div>
+		</div>
+		
+        <h3 id="category-title">Sneaker</h3>
+		<div id="card-container"></div>
+	</body>
+</html> 

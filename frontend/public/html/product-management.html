@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/management.css"/>
+    <script async src="js/management-header.js"></script>
+    <script defer src="js/product-management.js" type="module"></script>
+    <script defer src="js/modal.js" type="module"></script>
+</head>
+<body>
+    <header-component></header-component>
+    <h1>Product Management</h1>
+    <div class="container">
+        <div id="search-container">
+            <button data-target="#overlay" id="add-button">Add Product</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th id="id-header">ID</th>
+                    <th>Product Name</th>
+                    <th>Brand</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+                <tr></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="overlay" id="add-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Add Product</h2>
+                <button data-close-button class="close-button"><img src="images/close-icon.svg" alt="close" width="12" height="12"/></button>
+            </div>
+            
+            <form action="" method="POST" id="add-form">
+                <div class="input-container">
+                    <label for="add-id">ID (Auto Increment)</label>
+                    <input type="number" id="add-id" name="id" autocomplete="off"/>
+                </div><br>
+
+                <h4 class="form-label">Product Information</h4>
+                <div class="product-information">
+                    <div class="input-container input-a">
+                        <label for="add-name">Product Name</label>
+                        <input type="text" id="add-name" name="name" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-b">
+                        <label for="add-price">Price</label>
+                        <input type="number" id="add-price" name="price" value="0" autocomplete="off" pattern="[0-9]+" requied/>
+                    </div>
+
+                    <div class="input-container input-c">
+                        <label for="add-category">Category</label>
+                        <select id="add-category" name="category" required></select>
+                    </div>
+
+                    <div class="input-container input-d">
+                        <label for="add-gender">Gender</label>
+                        <select id="add-gender" name="gender" autocomplete="off" required>
+                            <option value="M">Men</option>
+                            <option value="W">Women</option>
+                            <option value="U">Unisex</option>
+                        </select>
+                    </div>
+
+                    <div class="input-container input-e">
+                        <label for="add-brand">Brand</label>
+                        <select id="add-brand" name="brand" autocomplete="off" required></select>
+                    </div>
+
+                    <div class="input-container input-f">
+                        <label for="add-desc">Description</label>
+                        <input type="text" id="add-desc" name="desc" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-g">
+                        <label for="add-image">Image</label>
+                        <input type="text" id="add-image" name="desc" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-h" id="add-size">
+                        <p>Sizes</p>
+                    </div>
+                </div>
+
+                <div id="button-container">
+                    <button type="submit" id="submit">Add Product</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay" id="edit-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>Edit Product</h2>
+                <button data-close-button class="close-button"><img src="images/close-icon.svg" alt="close" width="12" height="12"/></button>
+            </div>
+            
+            <form action="" method="PUT" id="edit-form">
+                 <div class="input-container">
+                    <label for="edit-id">ID</label>
+                    <input type="number" id="edit-id" name="id" autocomplete="off" disabled/>
+                </div><br>
+
+                <h4 class="form-label">Product Information</h4>
+                <div class="product-information">
+                    <div class="input-container input-a">
+                        <label for="edit-name">Product Name</label>
+                        <input type="text" id="edit-name" name="name" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-b">
+                        <label for="edit-price">Price</label>
+                        <input type="number" id="edit-price" value="0" name="price" autocomplete="off" pattern="[0-9]+" requied/>
+                    </div>
+
+                    <div class="input-container input-c">
+                        <label for="edit-category">Category</label>
+                        <select id="edit-category" name="category" required></select>
+                    </div>
+
+                    <div class="input-container input-d">
+                        <label for="edit-gender">Gender</label>
+                        <select id="edit-gender" name="gender" autocomplete="off" required>
+                            <option value="M">Men</option>
+                            <option value="W">Women</option>
+                            <option value="U">Unisex</option>
+                        </select>
+                    </div>
+
+                    <div class="input-container input-e">
+                        <label for="edit-brand">Brand</label>
+                        <select id="edit-brand" name="brand" autocomplete="off" required></select>
+                    </div>
+
+                    <div class="input-container input-f">
+                        <label for="edit-desc">Description</label>
+                        <input type="text" id="edit-desc" name="desc" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-g">
+                        <label for="edit-image">Image</label>
+                        <input type="text" id="edit-image" name="desc" autocomplete="off" required/>
+                    </div>
+
+                    <div class="input-container input-h" id="edit-size">
+                        <p>Sizes</p>
+                    </div>
+                </div>
+
+                <div id="button-container">
+                    <button type="submit" id="submit">Save</button>
+                    <button type="button" id="delete">Delete</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
